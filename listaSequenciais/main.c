@@ -23,6 +23,9 @@ int main() {
         printf(" %c |", Vetor[posicao]);
     }
 
+    printf("\n\nInforme um char para procurar na lista: ");
+    scanf(" %c", &valor);
+    consultar(Vetor, valor, n);
 
     return 0;
 }
