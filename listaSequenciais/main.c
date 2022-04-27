@@ -27,5 +27,14 @@ int main() {
     scanf(" %c", &valor);
     consultar(Vetor, valor, n);
 
+    printf("\nInforme um char para remover da lista: ");
+    scanf(" %c", &valor);
+    remover(Vetor, valor, n);
+
+    printf("\n\n A lista criada contem os seguintes elementos: \n\n");
+    for(posicao=0; posicao<MAX; posicao++) {
+        printf(" %c |", Vetor[posicao]);
+    }
+
     return 0;
 }

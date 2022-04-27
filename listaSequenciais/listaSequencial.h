@@ -28,3 +28,17 @@ void consultar (char Vetor[], char valor, int n) {
         }
     }
 }
+
+void remover(char Vetor[], char valor, int n) {
+    for(int i= 0; i < MAX; ++i) {
+        if(Vetor[i] == valor) {
+            achou = 1;
+            for(int j = 1; j< MAX; ++j) {
+                Vetor[j] = Vetor[j+1];
+            }
+        n--;  
+        } if (achou == 0) {
+            printf("\n\nO valor %c nao foi encontrado na lista", valor);
+        }
+    }
+}
