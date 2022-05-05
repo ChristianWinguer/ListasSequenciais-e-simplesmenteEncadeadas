@@ -5,35 +5,58 @@
 
 int main() {
     int i = 0;
+    int j = 0;
 
     printf("ATIVIDADE DE PRODUCAO U2\n");
-    printf("Lista sequencial\n\n");
+    printf("Lista sequencial\n");
+    linha();
 
-    printf("Inserindo valores char na lista\n");
+    printf("Criando uma lista sequencial de 5 caracteres\n");
+    linha();
     while(i < 5) {
-        printf("\nInforme o char que deseja inserir: ");
+        printf("Digite um caractere: \n");
         scanf(" %c", &valor);
         inserir(Vetor, valor, n);
         ++i;
         ++n;    
     }
     
-    printf("\n\n A lista criada contem os seguintes elementos: \n\n");
+    linha();
+    printf("\n A lista criada contem os seguintes elementos: \n");
     for(posicao=0; posicao<MAX; posicao++) {
         printf(" %c |", Vetor[posicao]);
     }
+    
+    int cont = 0;
+    while (cont == 0) {
+        linha();
+        printf("\n1- Consultar\n2- Remover\n3- Sair");
+        printf("\nDigite a opcao desejada: ");
+        scanf(" %d", &j);
+        if (j == 1){
+            printf("\n\nInforme um char para procurar na lista: ");
+            linha();
+            scanf(" %c", &valor);
+            consultar(Vetor, valor, n);
+        } else if (j == 2){
+            printf("\nInforme um char para remover da lista: ");
+            linha();
+            scanf(" %c", &valor);
+            remover(Vetor, valor, n);
 
-    printf("\n\nInforme um char para procurar na lista: ");
-    scanf(" %c", &valor);
-    consultar(Vetor, valor, n);
+            linha();
+            printf("\n\n A lista criada contem os seguintes elementos agora: \n\n");
+            for(posicao=0; posicao<MAX; posicao++) {
+            printf(" %c |", Vetor[posicao]);
+        }
+        } else if (j == 3){
+            printf("\nObrigado!");
+            linha();
+            cont = 1;
+        } else {
+            printf("opcao nao encontrada");
+        }
 
-    printf("\nInforme um char para remover da lista: ");
-    scanf(" %c", &valor);
-    remover(Vetor, valor, n);
-
-    printf("\n\n A lista criada contem os seguintes elementos: \n\n");
-    for(posicao=0; posicao<MAX; posicao++) {
-        printf(" %c |", Vetor[posicao]);
     }
 
     return 0;

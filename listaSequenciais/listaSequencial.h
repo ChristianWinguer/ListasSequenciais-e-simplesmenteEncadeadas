@@ -6,6 +6,10 @@
 char Vetor[MAX], valor;
 int n = 0, posicao; achou = 0;
 
+void linha() {
+    printf("\n-------------------------------------\n"); //Não consegui multiplicar um char em C
+}
+
 //Função para inserir um elemento
 char inserir (char Vetor[], char valor, int n) {
     if(MAX == n){
@@ -29,14 +33,15 @@ void consultar (char Vetor[], char valor, int n) {
     }
 }
 
+//função para remoção de um elemento
 void remover(char Vetor[], char valor, int n) {
     for(int i= 0; i < MAX; ++i) {
         if(Vetor[i] == valor) {
             achou = 1;
-            for(int j = 1; j< MAX; ++j) {
+            for(int j = i; j< MAX; ++j) {
                 Vetor[j] = Vetor[j+1];
             }
-        n--;  
+        n--;
         } if (achou == 0) {
             printf("\n\nO valor %c nao foi encontrado na lista", valor);
         }
