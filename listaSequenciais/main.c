@@ -7,9 +7,9 @@ int main() {
     int i = 0;
     int j = 0;
 
-    printf("ATIVIDADE DE PRODUCAO U2\n");
-    printf("Lista sequencial\n");
-    linha();
+    printf("==================================\n");
+	printf(" LISTA SEQUENCIAL \n");
+	printf("==================================\n");
 
     printf("Criando uma lista sequencial de 5 caracteres\n");
     linha();
